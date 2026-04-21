@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — GreetApp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --paper: #F3EFE8;
+    --ink: #1C1A17;
+    --ink-soft: #4A4640;
+    --ink-muted: #8C877F;
+    --accent: #C4593A;
+    --accent-light: #F0E8E4;
+    --border: #DDD8CF;
+    --sidebar-w: 240px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--cream);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--ink);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .brand {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .brand span { color: var(--accent); }
+  nav a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 24px;
+    transition: color 0.15s;
+  }
+  nav a:hover, nav a.active { color: #fff; }
+
+  .layout {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    gap: 0;
+    align-items: start;
+    padding: 0 2rem;
+  }
+
+  .toc {
+    position: sticky;
+    top: 72px;
+    padding: 2rem 2rem 2rem 0;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .toc-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 2px; }
+  .toc a {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.12s, color 0.12s;
+    line-height: 1.4;
+  }
+  .toc a::before {
+    content: counter(toc);
+    color: var(--ink-muted);
+    font-size: 11px;
+    min-width: 16px;
+    padding-top: 1px;
+  }
+  .toc a:hover { background: var(--paper); color: var(--ink); }
+  .toc a.active { background: var(--accent-light); color: var(--accent); }
+  .toc a.active::before { color: var(--accent); }
+
+  main {
+    padding: 3rem 0 5rem 3rem;
+    border-left: 1px solid var(--border);
+    min-width: 0;
+  }
+
+  .doc-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .doc-type {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .meta { font-size: 13px; color: var(--ink-muted); }
+  .intro {
+    margin-top: 1.25rem;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  .intro strong { color: var(--ink); font-weight: 500; }
+
+  section { margin-bottom: 3rem; padding-top: 1rem; }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .sec-num {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 0.9rem; color: var(--ink-soft); font-size: 15px; }
+  p:last-child { margin-bottom: 0; }
+
+  .clause {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .clause:last-child { border-bottom: none; }
+  .clause-id {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .clause p { margin: 0; }
+
+  ol.alpha { list-style: none; padding: 0; margin: 0.5rem 0; }
+  ol.alpha li {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    padding: 5px 0;
+  }
+  ol.alpha li::before {
+    content: attr(data-l);
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 18px;
+    font-size: 13px;
+  }
+
+  .highlight-box {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 1rem 0;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+
+  .contact-box {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: #fff;
+    margin-top: 1rem;
+  }
+  .contact-box p { color: rgba(255,255,255,0.7); margin-bottom: 4px; font-size: 14px; }
+  .contact-box a { color: #E8B4A0; text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+  .contact-box .contact-email { font-size: 18px; color: #fff; font-weight: 500; margin: 8px 0 12px; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 12px;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .layout { grid-template-columns: 1fr; padding: 0 1rem; }
+    .toc { display: none; }
+    main { padding: 2rem 0 4rem; border-left: none; }
+    h1 { font-size: 26px; }
+    header { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">Greet<span>App</span></a>
+  <nav>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-and-conditions.html" class="active">Terms &amp; Conditions</a>
+  </nav>
+</header>
+
+<div class="layout">
+
+  <aside class="toc">
+    <p class="toc-label">Contents</p>
+    <ol>
+      <li><a href="#s1">Eligibility</a></li>
+      <li><a href="#s2">User accounts</a></li>
+      <li><a href="#s3">The service</a></li>
+      <li><a href="#s4">User-generated content</a></li>
+      <li><a href="#s5">Acceptable use</a></li>
+      <li><a href="#s6">Intellectual property</a></li>
+      <li><a href="#s7">Third-party services</a></li>
+      <li><a href="#s8">Privacy &amp; data protection</a></li>
+      <li><a href="#s9">Disclaimers</a></li>
+      <li><a href="#s10">Limitation of liability</a></li>
+      <li><a href="#s11">Indemnification</a></li>
+      <li><a href="#s12">Termination</a></li>
+      <li><a href="#s13">Governing law</a></li>
+      <li><a href="#s14">Changes to terms</a></li>
+      <li><a href="#s15">General provisions</a></li>
+      <li><a href="#s16">Contact us</a></li>
+    </ol>
+  </aside>
+
+  <main>
+    <div class="doc-header">
+      <p class="doc-type">Legal document</p>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="meta">Last updated: April 21, 2025</p>
+      <p class="intro">
+        These Terms govern your access to and use of <strong>GreetApp</strong>, a
+        calendar-integrated platform for sending greeting cards and personalised greeting
+        messages, operated by <strong>FeliciaSoft</strong>, registered in Latvia.
+      </p>
+      <div class="highlight-box" style="margin-top:1.25rem;">
+        By creating an account or using the Service in any way, you confirm that you have
+        read, understood, and agree to be bound by these Terms. If you do not agree,
+        do not use the App.
+      </div>
+    </div>
+
+    <!-- 1 -->
+    <section id="s1">
+      <h2><span class="sec-num">1</span>Eligibility</h2>
+      <div class="clause"><div class="clause-id">1.1</div><p>You must be at least 13 years of age to use GreetApp. If you are between 13 and 16 years of age, you confirm that you have obtained consent from a parent or legal guardian to use the Service.</p></div>
+      <div class="clause"><div class="clause-id">1.2</div><p>By using the Service, you represent and warrant that you meet the age requirements above and that your use of the Service complies with all applicable laws and regulations in your jurisdiction.</p></div>
+      <div class="clause"><div class="clause-id">1.3</div><p>We reserve the right to refuse access or terminate accounts if we have reason to believe the eligibility requirements have not been met.</p></div>
+    </section>
+
+    <!-- 2 -->
+    <section id="s2">
+      <h2><span class="sec-num">2</span>User accounts</h2>
+      <div class="clause"><div class="clause-id">2.1 — Creating an account</div><p>To access certain features of GreetApp you must register for an account. You may do so by signing in through a supported third-party authentication provider (currently: Google, Apple, or Facebook). By using a third-party login, you authorise us to receive and use the profile information made available by that provider in accordance with our Privacy Policy.</p></div>
+      <div class="clause"><div class="clause-id">2.2 — Account responsibility</div><p>You are solely responsible for all activity that occurs under your account. You agree to keep your login credentials confidential and to notify us immediately at <a href="mailto:greetapp.feliciasoft@gmail.com" style="color:var(--accent);">greetapp.feliciasoft@gmail.com</a> if you suspect any unauthorised access.</p></div>
+      <div class="clause"><div class="clause-id">2.3 — Accurate information</div><p>You agree to provide accurate, current, and complete information when setting up your profile and to keep that information up to date.</p></div>
+      <div class="clause"><div class="clause-id">2.4 — One account per person</div><p>Each person may maintain only one active account. Creating duplicate or fraudulent accounts is prohibited.</p></div>
+      <div class="clause"><div class="clause-id">2.5 — Account deletion</div><p>You may delete your account at any time from within the App by navigating to the main menu and selecting "Delete account". Deletion is permanent and will result in the removal of your account and associated personal data, subject to any retention obligations described in our Privacy Policy.</p></div>
+    </section>
+
+    <!-- 3 -->
+    <section id="s3">
+      <h2><span class="sec-num">3</span>The service</h2>
+      <div class="clause"><div class="clause-id">3.1 — Description</div><p>GreetApp is a calendar-integrated application that allows users to create, personalise, and send digital greeting cards and greeting messages for birthdays, anniversaries, holidays, and other calendar events. Greetings can be sent as visual cards, personalised text messages, or a combination of both, giving users flexible ways to celebrate and connect with others.</p></div>
+      <div class="clause"><div class="clause-id">3.2 — Availability</div><p>We aim to keep the Service available at all times but do not guarantee uninterrupted access. We may suspend, modify, or discontinue any part of the Service at any time without prior notice for maintenance, updates, or other operational reasons.</p></div>
+      <div class="clause"><div class="clause-id">3.3 — Updates</div><p>We may release updates to the App from time to time. Depending on your device settings, updates may be applied automatically. Continued use of the App following an update constitutes your acceptance of the updated Service.</p></div>
+      <div class="clause"><div class="clause-id">3.4 — No offline guarantee</div><p>Certain features of the App require an active internet connection. We are not responsible for any limitations arising from your network or device.</p></div>
+    </section>
+
+    <!-- 4 -->
+    <section id="s4">
+      <h2><span class="sec-num">4</span>User-generated content</h2>
+      <div class="clause"><div class="clause-id">4.1 — What counts as user content</div><p>"User Content" means any text, images, photos, graphics, designs, messages, or other materials that you create, upload, submit, or transmit through the Service, including greeting card designs, personalised greeting messages, and any other content sent to recipients via the App.</p></div>
+      <div class="clause"><div class="clause-id">4.2 — Your ownership</div><p>You retain full ownership of all User Content you create. These Terms do not transfer ownership of your content to us.</p></div>
+      <div class="clause"><div class="clause-id">4.3 — Licence you grant to us</div><p>By submitting or uploading User Content to the Service, you grant the Company a non-exclusive, royalty-free, worldwide licence to store, reproduce, display, and transmit your User Content solely to the extent necessary to operate and provide the Service to you and your intended recipients. This licence ends when you delete the content or your account, subject to reasonable technical processing delays.</p></div>
+      <div class="clause"><div class="clause-id">4.4 — Responsibility for your content</div>
+        <p>You are solely responsible for all User Content you submit. You represent and warrant that:</p>
+        <ol class="alpha">
+          <li data-l="a"><span>you own or have the necessary rights, licences, and permissions to use and to authorise us to use all User Content you submit;</span></li>
+          <li data-l="b"><span>your User Content does not infringe or misappropriate any third-party intellectual property rights, privacy rights, or publicity rights;</span></li>
+          <li data-l="c"><span>your User Content complies with these Terms and all applicable laws.</span></li>
+        </ol>
+      </div>
+      <div class="clause"><div class="clause-id">4.5 — Prohibited content</div>
+        <p>You must not upload, send, or share content that:</p>
+        <ol class="alpha">
+          <li data-l="a"><span>is unlawful, harmful, threatening, abusive, harassing, defamatory, or invasive of another's privacy;</span></li>
+          <li data-l="b"><span>depicts or promotes violence, self-harm, or hate speech based on race, ethnicity, religion, gender, sexual orientation, disability, or nationality;</span></li>
+          <li data-l="c"><span>is sexually explicit or obscene;</span></li>
+          <li data-l="d"><span>contains or depicts anyone under the age of 18 in a sexual or inappropriate manner;</span></li>
+          <li data-l="e"><span>infringes any copyright, trademark, patent, trade secret, or other proprietary right;</span></li>
+          <li data-l="f"><span>constitutes unsolicited commercial communications (spam);</span></li>
+          <li data-l="g"><span>contains malware, viruses, or any other harmful code;</span></li>
+          <li data-l="h"><span>impersonates any person or entity, or misrepresents your affiliation with any person or entity.</span></li>
+        </ol>
+      </div>
+      <div class="clause"><div class="clause-id">4.6 — Content moderation and removal</div><p>We do not routinely monitor User Content but reserve the right to review, refuse, or remove any User Content at our sole discretion, without notice, if we believe it violates these Terms or is otherwise objectionable.</p></div>
+      <div class="clause"><div class="clause-id">4.7 — Reporting abuse</div><p>If you encounter content that violates these Terms, please report it to us at <a href="mailto:greetapp.feliciasoft@gmail.com" style="color:var(--accent);">greetapp.feliciasoft@gmail.com</a> with a description of the issue.</p></div>
+    </section>
+
+    <!-- 5 -->
+    <section id="s5">
+      <h2><span class="sec-num">5</span>Acceptable use</h2>
+      <p>You agree to use the Service only for lawful purposes and in a manner consistent with these Terms. You must not:</p>
+      <ol class="alpha">
+        <li data-l="a"><span>use the Service to harass, stalk, threaten, or harm any individual;</span></li>
+        <li data-l="b"><span>use automated tools, bots, scripts, or scrapers to access or interact with the Service without our prior written consent;</span></li>
+        <li data-l="c"><span>attempt to gain unauthorised access to any part of the Service, its servers, or any systems connected to it;</span></li>
+        <li data-l="d"><span>interfere with or disrupt the integrity or performance of the Service;</span></li>
+        <li data-l="e"><span>reverse-engineer, decompile, disassemble, or attempt to derive the source code of the App;</span></li>
+        <li data-l="f"><span>use the Service to collect or harvest personal data of other users without their explicit consent;</span></li>
+        <li data-l="g"><span>use the Service for any commercial purpose or for the benefit of any third party without our prior written approval;</span></li>
+        <li data-l="h"><span>circumvent any technical measures we use to provide or protect the Service.</span></li>
+      </ol>
+    </section>
+
+    <!-- 6 -->
+    <section id="s6">
+      <h2><span class="sec-num">6</span>Intellectual property</h2>
+      <div class="clause"><div class="clause-id">6.1 — Our content</div><p>All elements of the Service not constituting User Content — including but not limited to the App design, logo, graphics, templates, software, text, and underlying technology — are the exclusive property of the Company or its licensors and are protected by applicable intellectual property laws.</p></div>
+      <div class="clause"><div class="clause-id">6.2 — Restrictions</div><p>Nothing in these Terms grants you any right to use our trademarks, trade names, logos, or other brand features. You must not copy, modify, distribute, sell, or lease any part of our Service or its content without our express written permission.</p></div>
+      <div class="clause"><div class="clause-id">6.3 — Feedback</div><p>If you submit suggestions, ideas, or feedback about the Service, you grant us a perpetual, irrevocable, royalty-free licence to use and incorporate that feedback into the Service without any obligation to compensate you.</p></div>
+    </section>
+
+    <!-- 7 -->
+    <section id="s7">
+      <h2><span class="sec-num">7</span>Third-party services and links</h2>
+      <div class="clause"><div class="clause-id">7.1 — Authentication providers</div><p>The App supports sign-in via Google, Apple, and Facebook. Your use of those services is governed by their respective terms of service and privacy policies. We are not responsible for the practices of these third-party providers.</p></div>
+      <div class="clause"><div class="clause-id">7.2 — Third-party links</div><p>The Service may contain links to external websites or services. These links are provided for convenience only. We have no control over and accept no responsibility for the content, privacy policies, or practices of any third-party sites.</p></div>
+      <div class="clause"><div class="clause-id">7.3 — Integrations</div><p>We may integrate with third-party calendar platforms or notification services to enable reminders and scheduling features. Such integrations are subject to the terms of those respective services.</p></div>
+    </section>
+
+    <!-- 8 -->
+    <section id="s8">
+      <h2><span class="sec-num">8</span>Privacy &amp; data protection</h2>
+      <div class="clause"><div class="clause-id">8.1</div><p>Your use of the Service is also governed by our <a href="privacy-policy.html" style="color:var(--accent);">Privacy Policy</a>, which is incorporated into these Terms by reference.</p></div>
+      <div class="clause"><div class="clause-id">8.2</div><p>The Company processes personal data in accordance with the General Data Protection Regulation (GDPR) (EU) 2016/679 and applicable Latvian data protection law.</p></div>
+      <div class="clause"><div class="clause-id">8.3</div><p>You have the right to access, rectify, erase, restrict, and port your personal data, as well as to object to its processing. To exercise any of these rights, contact us at <a href="mailto:greetapp.feliciasoft@gmail.com" style="color:var(--accent);">greetapp.feliciasoft@gmail.com</a>.</p></div>
+      <div class="clause"><div class="clause-id">8.4</div><p>You have the right to lodge a complaint with the Latvian data protection supervisory authority, Datu valsts inspekcija (DVI), at <a href="https://www.dvi.gov.lv" target="_blank" rel="noopener" style="color:var(--accent);">www.dvi.gov.lv</a>.</p></div>
+    </section>
+
+    <!-- 9 -->
+    <section id="s9">
+      <h2><span class="sec-num">9</span>Disclaimers</h2>
+      <div class="clause"><div class="clause-id">9.1</div><p>The Service is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p></div>
+      <div class="clause"><div class="clause-id">9.2</div>
+        <p>We do not warrant that:</p>
+        <ol class="alpha">
+          <li data-l="a"><span>the Service will be uninterrupted, secure, or error-free;</span></li>
+          <li data-l="b"><span>any errors or defects will be corrected;</span></li>
+          <li data-l="c"><span>the Service or the servers that make it available are free of viruses or other harmful components.</span></li>
+        </ol>
+      </div>
+      <div class="clause"><div class="clause-id">9.3</div><p>Greeting cards and messages sent through the App are delivered on a best-effort basis. We do not guarantee delivery or the timeliness of delivery of any greeting card, greeting message, or notification, regardless of the format in which it is sent.</p></div>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <h2><span class="sec-num">10</span>Limitation of liability</h2>
+      <div class="clause"><div class="clause-id">10.1</div><p>To the fullest extent permitted by applicable law, the Company shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or goodwill, arising out of or in connection with your use of or inability to use the Service.</p></div>
+      <div class="clause"><div class="clause-id">10.2</div><p>Our total aggregate liability to you for any claim arising out of or relating to these Terms or the Service shall not exceed the greater of (a) EUR 50, or (b) the total amount you paid us in the twelve months preceding the claim (which, if the Service is free of charge, shall be EUR 0).</p></div>
+      <div class="clause"><div class="clause-id">10.3</div><p>Nothing in these Terms limits or excludes our liability for fraud, fraudulent misrepresentation, or any other liability that cannot be excluded by law.</p></div>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <h2><span class="sec-num">11</span>Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold harmless the Company and its officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, losses, costs, or expenses (including reasonable legal fees) arising out of or relating to: (a) your use of the Service; (b) your User Content; (c) your violation of these Terms; or (d) your violation of any third-party right, including intellectual property or privacy rights.</p>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+      <h2><span class="sec-num">12</span>Termination</h2>
+      <div class="clause"><div class="clause-id">12.1</div><p>You may stop using the Service and delete your account at any time.</p></div>
+      <div class="clause"><div class="clause-id">12.2</div><p>We reserve the right to suspend or permanently terminate your access to the Service, without prior notice or liability, if we reasonably believe you have violated these Terms, engaged in fraudulent activity, or acted in a way that harms other users or the Company.</p></div>
+      <div class="clause"><div class="clause-id">12.3</div><p>Upon termination, your right to use the Service ceases immediately. Sections 4.3, 6, 9, 10, 11, and 13 survive termination.</p></div>
+    </section>
+
+    <!-- 13 -->
+    <section id="s13">
+      <h2><span class="sec-num">13</span>Governing law &amp; dispute resolution</h2>
+      <div class="clause"><div class="clause-id">13.1</div><p>These Terms are governed by and construed in accordance with the laws of the Republic of Latvia, without regard to its conflict-of-law provisions.</p></div>
+      <div class="clause"><div class="clause-id">13.2</div><p>Any dispute arising out of or in connection with these Terms or the Service shall be subject to the exclusive jurisdiction of the competent courts of Latvia.</p></div>
+      <div class="clause"><div class="clause-id">13.3</div><p>If you are a consumer resident in the European Union, you may also be entitled to use the European Commission's Online Dispute Resolution platform, available at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--accent);">ec.europa.eu/consumers/odr</a>.</p></div>
+    </section>
+
+    <!-- 14 -->
+    <section id="s14">
+      <h2><span class="sec-num">14</span>Changes to these terms</h2>
+      <div class="clause"><div class="clause-id">14.1</div><p>We may update these Terms from time to time. When we make material changes, we will notify you through the App and/or by email at least <strong>14 days</strong> before the changes take effect.</p></div>
+      <div class="clause"><div class="clause-id">14.2</div><p>The updated Terms will carry a revised "Last updated" date. Your continued use of the Service after the effective date of any changes constitutes your acceptance of the new Terms.</p></div>
+      <div class="clause"><div class="clause-id">14.3</div><p>If you do not agree to the revised Terms, you must stop using the Service and delete your account before the changes take effect.</p></div>
+    </section>
+
+    <!-- 15 -->
+    <section id="s15">
+      <h2><span class="sec-num">15</span>General provisions</h2>
+      <div class="clause"><div class="clause-id">15.1 — Entire agreement</div><p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and the Company regarding your use of the Service.</p></div>
+      <div class="clause"><div class="clause-id">15.2 — Severability</div><p>If any provision of these Terms is found to be invalid or unenforceable, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall continue in full force and effect.</p></div>
+      <div class="clause"><div class="clause-id">15.3 — Waiver</div><p>Our failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</p></div>
+      <div class="clause"><div class="clause-id">15.4 — Assignment</div><p>You may not assign or transfer your rights or obligations under these Terms without our prior written consent. We may assign our rights and obligations freely.</p></div>
+      <div class="clause"><div class="clause-id">15.5 — Language</div><p>These Terms are written in English. In the event of any conflict between translated versions, the English version shall prevail.</p></div>
+    </section>
+
+    <!-- 16 -->
+    <section id="s16">
+      <h2><span class="sec-num">16</span>Contact us</h2>
+      <p>If you have any questions, concerns, or requests relating to these Terms, please contact us:</p>
+      <div class="contact-box">
+        <p>Email us at</p>
+        <p class="contact-email"><a href="mailto:greetapp.feliciasoft@gmail.com">greetapp.feliciasoft@gmail.com</a></p>
+        <p>FeliciaSoft · Latvia</p>
+        <p style="margin-top:8px;font-size:13px;">We aim to respond to all enquiries within 5 business days.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>© 2025 FeliciaSoft. GreetApp is registered in Latvia. &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.toc a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.toc a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
